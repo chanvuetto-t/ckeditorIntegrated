@@ -9,18 +9,18 @@ const App = () => {
                <CKEditor
                    editor={ Editor }
                    data="<p>Hello from CKEditor 5!</p>"
-                   onReady={ editor => {
+                   onReady={ (editor: any) => {
                        // You can store the "editor" and use when it is needed.
                        console.log( 'Editor is ready to use!', editor );
                    } }
-                   onChange={ ( event, editor ) => {
+                   onChange={ ( event: any, editor: { getData: () => any; } ) => {
                        const data = editor.getData();
                        console.log( { event, editor, data } );
                    } }
-                   onBlur={ ( event, editor ) => {
+                   onBlur={ ( event: any, editor: any ) => {
                        console.log( 'Blur.', editor );
                    } }
-                   onFocus={ ( event, editor ) => {
+                   onFocus={ ( event: any, editor: any ) => {
                        console.log( 'Focus.', editor );
                    } }
                />
